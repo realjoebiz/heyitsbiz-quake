@@ -8,7 +8,7 @@ RUN mkdir -p /quakejs/base/baseq3 /quakejs/base/cpma \
  && printf '%s\n' \
   'seta sv_hostname "heyitsbiz // OpenArena"' \
   'seta sv_maxclients 8' \
-  'seta g_motd "quake.heyitsbiz.com — frag with friends. Bots fill empty slots."' \
+  'seta g_motd "quake.heyitsbiz.com - frag with friends. Bots fill empty slots."' \
   'seta g_quadfactor 3' \
   'seta g_gametype 0' \
   'seta timelimit 10' \
