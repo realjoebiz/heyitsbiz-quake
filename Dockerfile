@@ -2,7 +2,8 @@
 # Content is Quake 3 Arena Demo (what free QuakeJS ships) + bots.
 FROM awakenedpower/quakejs-rootless:latest
 
-USER root
+# Hardened base has no named "root" — use uid 0.
+USER 0
 
 RUN mkdir -p /quakejs/base/baseq3 /quakejs/base/cpma \
  && printf '%s\n' \
