@@ -1,20 +1,21 @@
-# heyitsbiz Quake — OpenArena (browser)
+# heyitsbiz Quake — browser arena FPS
 
 **Live:** https://quake.heyitsbiz.com
 
-Browser deathmatch via [QuakeJS](https://github.com/inolen/quakejs) (ioquake3 → WASM) with free redistributable arena content. Bots auto-fill to 3 players.
+QuakeJS (ioquake3 compiled for the browser) with free redistributable arena content, bots, and multiplayer over WSS on a single port.
 
 ## Play
 
-1. Open the site — assets download once
-2. Escape → Multiplayer (or join the running server)
-3. WASD + mouse. Friends join the same URL.
+1. Open https://quake.heyitsbiz.com — wait for assets
+2. Escape → Multiplayer / join the running game
+3. Friends use the same URL · bots fill empty slots
 
-## Stack
+## Coolify
 
-- Image based on `awakenedpower/quakejs-rootless` (single port 8080: HTTP + WebSocket)
-- Coolify on Biz-VPS · DNS `quake.heyitsbiz.com`
+- App: **Heyitsbiz OpenArena** (`awakenedpower/quakejs-rootless:latest`)
+- Domain: `quake.heyitsbiz.com` → Biz-VPS
+- Port: `8080` (HTTP + WebSocket multiplexed)
 
-## Config
+## Custom server.cfg (optional)
 
-Edit [`server.cfg`](server.cfg) for frag limit, map cycle, bot count (`bot_minplayers`).
+[`Dockerfile`](Dockerfile) + [`server.cfg`](server.cfg) bake bots / hostname for a custom image build. Production currently runs the stock rootless image; point Coolify at this Dockerfile when you want the heyitsbiz cfg baked in.
